@@ -149,7 +149,7 @@ color: #4d4d4d;
 
 
 .logo{
-  z-index: 4;
+  z-index: 50;
   position: absolute;
 
 }
@@ -194,7 +194,7 @@ div .slider{
   margin-left: 10px;
 }
 
-.far {
+.star {
   font-size: 1.4rem;
  
 }
@@ -317,7 +317,11 @@ transform: rotate(-45deg);
 
 /* style main first*/
 
-
+.forimg{
+  position: relative;
+  max-width: 100%;
+  background: #f6f3ec;
+}
 .firstmain{
   max-width: 100%;
   height: 425px;
@@ -467,6 +471,10 @@ letter-spacing: 4px;
   display: flex;
   width: 100%;
 
+}
+.youneedtobeheer{
+  height: 100%;
+  display:flex;
 }
 .video{
   height: 475px;
@@ -789,7 +797,11 @@ flex-direction: row;
 }
 
 
-@media screen and (max-width: 1100px){
+@media screen and (max-width: 1120px){
+
+.line{
+margin: 0;
+}
 
 .menu div a{
 display: none;
@@ -802,24 +814,158 @@ display: none;
   
 }
 
-.cubeprisetext div{
-  margin:auto;
-  padding-bottom: 3px;
-  text-align: center;
-  color:  #a7b3b3;
-  font-size: 1.2rem
-}
-
-.haveborder{
-  border-bottom: 1px solid #a7b3b3;
-}
 .speshcebe{
-  height: 100px;
-  width: 100px;  
+  height: 125px;
+  width: 125px;  
 }
-.speshcebe .star-rating{
-  font-size: 1rem;
+.star {
+  font-size: 1.1rem;
+}
+.recommendded, .video{
+  width: 100%;
+}
+.boxis, .refond{
+   width: 50%;
+}
+ .lastmain{
+  width: 100%;
+  height: auto;
+  
+  display: flex;
+  flex-wrap: wrap;
+ justify-content:  space-around;
+  
+}
+
+.cloder{
+ max-width: 40%;
+ margin:15px;
+}
+.cloder:last-child{
+  margin-right: 15px;
+}
+
+}
+@media screen and (max-width: 850px){
+
+
+.conten{
+  position: absolute;
+  text-align: center;
+  margin-left: 5%;
+}
+
+.cube{
+  margin: 20% 0 0 0;
+  height: auto;
+  justify-content: flex-end;
+ 
+}
+
+.cubeprise,.speshcebe{
+  margin: 0;
+  
+}
+.man{
+  z-index: 1;
+  position: absolute;
+  right:0;
+}
+.firstmain{
+  position: relative;
+  z-index:3 ;
+}
+.slider{
+   height: auto;
+  position: relative;
+  
+}
+.ladi{
+z-index: 1;
+opacity: 0.4;
+bottom: 0;
+}
+
+.info{
+  width: 80%;
+  z-index: 3;
+  text-shadow:4px 8px 30px #fff ;
+
+}
+.footer{
+ flex-direction: column-reverse;
+
+}
+.links{
+  margin: 15px;
+}
+}
+
+
+@media screen and (max-width: 670px){
+
+
+.conten{
+  height: 100%;
+  width: inherit;
+  justify-content: space-between;
+}
+
+.cube{
+  margin: 0  0 10%  8%;
+  position: absolute; 
+  bottom: 20px;
+  left:0;
+  z-index: 2;
+  height: 200px;
+}
+
+
+div .slider{
+  height: 670px;
+  position: relative;
+}
+.youneedtobeheer{
+  flex-direction: column;
+}
+
+
+.boxis, .refond{
+   width: 100%;
+   
+}
+.boxis{
+  height: 452px;
+}
+
 
 }
 
+
+@media screen and (max-width: 540px){
+.ladi{
+
+opacity: 1;
+}
+
+.speshcebe{
+  position: absolute;
+  right: 12%;
+}
+.cloder{
+  max-width: 80%;
+}
+.lastmain{
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.cube{
+  padding-left: 8%;
+}
+ div.slider{
+ height: 800px;
+}
+.cubeprise {
+align-self: flex-end;
+}
 }

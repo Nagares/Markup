@@ -1,6 +1,63 @@
+const newMain = $('.youneedtobeheer');
+const hasBoxis = $('.boxis');
+const hasRefond = $('.refond')
+const mainforBoxis = $('.firstmain');
+const mainforRefond = $('.twicemain');
+const hasImg = $('.ladi');
+const mainforImg = $('.forimg');
+const oldmainforImg = $('.info');
 
 
-/*
+const madeNewBlock={
+  append: function(child, parent){
+            child.remove();
+            parent.append(child);},
+
+  prepend: function(child, parent){
+            parent.prepend(child);},
+  before: function(child, parent){
+            parent.before(child);},
+}
+
+
+
+$(window).resize(function(){
+    responsMe()
+  })
+
+function responsMe(){
+  
+   if(($(window).width() <= 1100) && (!newMain.children('#id').length > 0) ){
+      madeNewBlock.append(hasBoxis, newMain);
+      madeNewBlock.append(hasRefond, newMain);
+   }
+
+   else if(($(window).width() >= 1101) && (mainforBoxis.children().length <= 1)){
+    
+   
+      madeNewBlock.prepend(hasBoxis, mainforBoxis);
+      madeNewBlock.append(hasRefond, mainforRefond);
+   }
+
+    if(($(window).width() <= 530) && (oldmainforImg.parent().children().length > 3)){
+     madeNewBlock.append(hasImg, mainforImg);
+      hasImg.css({
+        'position': 'static'
+      })
+       
+   }
+
+   else if(($(window).width() >= 531) && (oldmainforImg.parent().children().length <= 3)){
+   
+      madeNewBlock.before(hasImg, oldmainforImg);
+      hasImg.css({
+        'position': 'absolute'
+      })
+   }
+}
+
+
+
 // Stars hover
 $('.star-rating').hover(function() {
 
@@ -41,8 +98,12 @@ $('.star-rating').hover(function() {
 
 })
 
+
+
+
 //блоки фиксации
 $(document).ready(function () {
+  responsMe()
       var offset = $('.fixed').offset();
     var topPadding = 0;
     $(window).scroll(function() {
@@ -56,50 +117,4 @@ $(document).ready(function () {
 });
 
 
-
-
    
-
-
-
-      // 2. This code loads the IFrame Player API code asynchronously.
-      var tag = document.createElement('script');
-
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          height: '360',
-          width: '640',
-          videoId: 'M7lc1UVf-VE',
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-      }
-
-      // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
-
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-      var done = false;
-      function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
-          done = true;
-        }
-      }
-      function stopVideo() {
-        player.stopVideo();
-      }
- */
