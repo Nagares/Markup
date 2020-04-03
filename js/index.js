@@ -37,22 +37,19 @@ function responsMe(){
    
       madeNewBlock.prepend(hasBoxis, mainforBoxis);
       madeNewBlock.append(hasRefond, mainforRefond);
+
    }
 
     if(($(window).width() <= 530) && (oldmainforImg.parent().children().length > 3)){
      madeNewBlock.append(hasImg, mainforImg);
-      hasImg.css({
-        'position': 'static'
-      })
+     
        
    }
 
    else if(($(window).width() >= 531) && (oldmainforImg.parent().children().length <= 3)){
    
       madeNewBlock.before(hasImg, oldmainforImg);
-      hasImg.css({
-        'position': 'absolute'
-      })
+      
    }
 }
 
